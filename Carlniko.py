@@ -221,50 +221,7 @@ class carlniko:
        except:
            print("Error en metodo getSelfIpAddresses")
 
-   ###############################################################################################################################
-   #                                                                                                                             #
-   #                 This method returns the gateway's IP address of a host's IP given                                           #
-   #                 This method receives as paramters, IP of the host, connection handler                                       #
-   #                 of the backbone switch/router, username, password, enable password                                          #
-   #                                                                                                                             #             
-   #                                                                                                                             #
-   ###############################################################################################################################
-   
-   #def getGateway(self,ip,conn,username,password,secret,ipSw): 
-   #    try:
-    #       lista = []
-     #      valid = False
-      #     while not carlniko.validateNetwork(self,ip,conn):
-       #        contador = 1
-        #       ipSw = carlniko.getNextHop(self,ip,conn)
-         #      if contador == 1:
-    #              device = {"username":username,"password":password,"secret":secret}
-     #             lista.append(device)
-      #         device = carlniko.validateSSHConection(self,lista,ipSw)
-       #        if not device:
-        #           cont = 0
-         #          while cont<3 and carlniko.validateSSHConection(self,lista,ipSw)==False:  
-          #             cont+=1
-           #            device = carlniko.askCredentials(self,ipSw)
-            #           lista.append(device)
-             #      if cont >=3:
-              #         return "Error to connect Via SSH in device "+ipSw
-              # ios_device = {"device_type": "cisco_ios",
-   #               "ip":ipSw,
-    #              "username":device.get("username"),
-     #             "password":device.get("password"),
-      #            "secret":secret,
-       #           'global_delay_factor': .01
-        #         }
-         #      conn.disconnect()
-          #     conn = netmiko.ConnectHandler(**ios_device)
-           #    conn.enable()
-            #   contador +=1
-  #         return ipSw     
-   #    except:
-    #      return " Error en getGateway"
-      
-
+ 
    ###############################################################################################################################
    #                                                                                                                             #
    #                 Return the part number of the switch where connection is given                                              #
@@ -288,33 +245,6 @@ class carlniko:
 
    ###############################################################################################################################
    #                                                                                                                             #
-   #                 Return TRUE If the host's IP address is available for NAC configuration                                     #
-   #                 The IP networks available for NAC policy must be defined by user                                            #
-   #                 The method receives ip address of the host and the connection handler                                       #
-   #                                                                                                                             #
-   ###############################################################################################################################
-
- #  def validateNACPossible(self,ip,conn):
-  #     try:
-           ##########################################################################################################
-           #            You must define the RegEx. Include into RegEx  all the IP segments                          #
-           #            that are available for NAC policy                                                           #
-           ##########################################################################################################
- #          NAC_regex = re.compile(r'') 
-  #         PID = carlniko.getPID(self,conn)
-   #        PID = re.findall("ASA", PID)
-    #       BAND = True
-     #      ip2 = re.findall(NAC_regex,ip)
-      #     if  ip2:
-       #       BAND = False
-        #   if PID or BAND:
-         #      return False
-          # return True
-    #   except:
-     #      return "ERROR"
-
-   ###############################################################################################################################
-   #                                                                                                                             #
    #                 Return TRUE If credential given are correct.                                                                #
    #                                                                                                                             #
    ###############################################################################################################################
@@ -328,25 +258,6 @@ class carlniko:
            return True
        except(AuthenticationException):
            return False
-
-   ###############################################################################################################################
-   #                                                                                                                             #
-   #                 This method makes ask for credentials      .                                                                #
-   #                                                                                                                             #
-   ###############################################################################################################################
-   
-  # def askCredentials(self,ip):
-   #    print("Invalid login for "+ip)
-    #   username = input("Enter your SSH username: ")
-     #  password = getpass()
-      # secret = "J1c4m4@2016"
-       #ios_device = {    
-        #  "username":username,
-         # "password":password,
-          #"secret":secret
-
-           # }
-      # return ios_device
 
    ###############################################################################################################################
    #                                                                                                                             #
