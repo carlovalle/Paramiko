@@ -1,4 +1,3 @@
-import netmiko
 import paramiko
 import re
 import os
